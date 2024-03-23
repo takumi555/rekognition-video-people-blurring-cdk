@@ -1,4 +1,6 @@
-FROM public.ecr.aws/lambda/python:3.8
+# FROM public.ecr.aws/lambda/python:3.8
+# FROM --platform=linux/amd64 public.ecr.aws/lambda/python:3.10
+FROM --platform=linux/amd64 public.ecr.aws/lambda/python:3.8
 # Install the function's dependencies
 # Copy file requirements.txt from your project folder and install
 # the requirements in the app directory.
