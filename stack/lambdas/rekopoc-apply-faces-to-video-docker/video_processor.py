@@ -40,11 +40,15 @@ def apply_faces_to_video(final_timestamps, local_path_to_video, local_output, vi
     frame_rate = video_metadata["FrameRate"]
     frame_height = video_metadata["FrameHeight"]
     frame_width = video_metadata["FrameWidth"]
-    width_delta = int(frame_width / 250)
+    # 以下で余白を調整
+    width_delta = int(frame_width / 100)
     height_delta = int(frame_height / 100)
+    # width_delta *= 10
+    # height_delta *= 10
     # Set up support for OpenCV
     frame_counter = 0
-    fourcc = cv2.VideoWriter_fourcc('M', 'J', 'P', 'G')
+    # fourcc = cv2.VideoWriter_fourcc('M', 'J', 'P', 'G')
+    fourcc = cv2.VideoWriter_fourcc('m', 'p', '4', 'v')
     # Create the file pointers
     v = cv2.VideoCapture(local_path_to_video)
     print("VideoCapture - local path to video")
